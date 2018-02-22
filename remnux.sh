@@ -19,7 +19,7 @@ NC='\033[0m'
 printf "${BLUE}System Updater${NC}\n\n"
 printf "${GREEN}[+] Checking for root:${NC}"
 if [ $(sudo id -u) = 0 ]; then
-    printf "${GREEN} OK${NC}\n"
+    printf " OK\n"
     printf "${GREEN}[+] Updating REMnux software:${NC}\n"
     sudo update-remnux | sed 's/^/    /'
 
