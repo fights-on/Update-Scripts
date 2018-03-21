@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# For use with REMnux.
+# For use with CentOS.
 
 # Installation:
 
@@ -21,7 +21,7 @@ printf "${GREEN}[+] Checking for root:${NC}"
 if [ $(sudo id -u) = 0 ]; then
     printf " OK\n"
 
-printf "${GREEN}[+] Updating the REMnux system:${NC}\n"
+printf "${GREEN}[+] Updating the system:${NC}\n"
     sudo yum update -y | sed 's/^/    /'
     sudo yum autoremove -y | sed 's/^/    /'
     sudo yum clean all | sed 's/^/    /'
