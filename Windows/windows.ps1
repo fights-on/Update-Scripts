@@ -7,6 +7,7 @@ function update {
         Write-Host "[+] Checking for PSWindowsUpdate: " -NoNewline -ForegroundColor "Green"
         If (Get-Module -ListAvailable -Name PSWindowsUpdate) {
             Write-Host "OK"
+            Update-Module PSWindowsUpdate
             Write-Host "[+] Updating Windows: " -ForegroundColor "Green"
             Get-WindowsUpdate -Install -AcceptAll -AutoReboot
         } Else {
