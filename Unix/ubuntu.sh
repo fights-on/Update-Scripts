@@ -20,7 +20,7 @@ printf "${BLUE}System Updater${NC}\n\n"
 if [ -z ${SUDO_USER+x} ] || [ $(id -u) != 0 ]; then
     printf "${GREEN}[+] Checking for root:${NC}\n"
 fi
-if [ $(sudo id -u) = 0 ]; then
+if [[ $(sudo id -u) == 0 ]]; then
     printf "${GREEN}[+] Checking for root:${NC}"
     printf " OK\n"
     printf "${GREEN}[+] Updating System:${NC}\n"
