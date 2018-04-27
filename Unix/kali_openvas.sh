@@ -17,8 +17,11 @@ RED='\033[0;31m'
 NC='\033[0m'
 
 printf "${BLUE}System Updater${NC}\n\n"
-printf "${GREEN}[+] Checking for root:${NC}"
+if [ -z ${SUDO_USER+x} ] || [ $(id -u) != 0 ]; then
+    printf "${GREEN}[+] Checking for root:${NC}\n"
+fi
 if [ $(sudo id -u) = 0 ]; then
+    printf "${GREEN}[+] Checking for root:${NC}"
     printf " OK\n"
     printf "${GREEN}[+] Updating Kali:${NC}\n"
     sudo apt-get update | sed 's/^/    /'
